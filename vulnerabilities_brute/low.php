@@ -1,11 +1,11 @@
 <?php
-// CWE-20, CWE-598
-if (isset($_POST[ 'Login' ]) && isset($_POST[ 'username' ]) && isset($_POST[ 'password' ])) {
+// CWE-20
+if (isset($_GET[ 'Login' ]) && isset($_GET[ 'username' ]) && isset($_GET[ 'password' ])) {
 	$ston = $GLOBALS["___mysqli_ston"];
 
 	// CWE-89
-	$user = mysqli_real_escape_string($ston, $_POST[ 'username' ]);
-	$pass = mysqli_real_escape_string($ston, $_POST[ 'password' ]);	
+	$user = mysqli_real_escape_string($ston, $_GET[ 'username' ]);
+	$pass = mysqli_real_escape_string($ston, $_GET[ 'password' ]);	
 	$pass = md5( $pass );
 
 	$max_failed_login = 3;
