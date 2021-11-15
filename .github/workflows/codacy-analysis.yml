@@ -10,7 +10,7 @@ name: Codacy Security Scan
 
 on:
   push:
-    branches: [ * ]
+    branches: [ master, fixup_security_vulnerabilities_sqli ]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ master ]
